@@ -75,3 +75,5 @@ deno/
 
 # MacOS
 .DS_Store
+
+.idea
