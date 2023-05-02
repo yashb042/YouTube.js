@@ -9,6 +9,8 @@ const creds = existsSync(creds_path) ? JSON.parse(readFileSync(creds_path).toStr
 
 
 (async () => {
+  const args = process.argv.slice(2);
+  console.log(args);
   const yt = await Innertube.create({cache: new UniversalCache(false)});
 
   yt.session.on('auth-pending', (data: any) => {
