@@ -45,7 +45,6 @@ const creds = existsSync(creds_path) ? JSON.parse(readFileSync(creds_path).toStr
 function getVideoId(youtubeUrl): string {
   const parsedUrl = url.parse(youtubeUrl);
   const query = parsedUrl.query || '';
-  console.log(parsedUrl);
   let videoIdMatch;
   if ((parsedUrl.host === 'www.youtube.com' || parsedUrl.host === 'www.youtube.com' ) && parsedUrl.pathname != null && parsedUrl.pathname.includes('/watch')) {
     videoIdMatch = query.match(/v=([^&]+)/);

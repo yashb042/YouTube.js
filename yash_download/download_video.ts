@@ -41,7 +41,6 @@ import * as url from 'url';
 function getVideoId(youtubeUrl): string {
   const parsedUrl = url.parse(youtubeUrl);
   const query = parsedUrl.query || '';
-  console.log(parsedUrl);
   let videoIdMatch;
   if (parsedUrl.host === 'www.youtube.com' && parsedUrl.pathname != null && parsedUrl.pathname.includes('/watch')) {
     videoIdMatch = query.match(/v=([^&]+)/);
