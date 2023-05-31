@@ -15,8 +15,8 @@ const creds = existsSync(creds_path) ? JSON.parse(readFileSync(creds_path).toStr
   //https://youtube.com/shorts/_5Y7EnyzBRY?feature=share
 
   // const videos = [ 'https://www.youtube.com/shorts/2AVMulISMlo', 'https://www.youtube.com/shorts/fCtrM8XR4ps', 'https://www.youtube.com/shorts/iKvOk4tRc6o', 'https://www.youtube.com/shorts/9Lm2mPXy52M', 'https://www.youtube.com/shorts/ncIq6e56YmM' ];
-  const videos = [ 'https://www.youtube.com/watch?v=IYFrmr_GFck' ];
-  const output_video_name = 'video_7.mp4';
+  const videos = [ 'https://www.youtube.com/shorts/SWg29BDU9GA' , 'https://www.youtube.com/shorts/t3SSZXDQDt0', 'https://www.youtube.com/shorts/bGW6mXaKRe8', 'https://www.youtube.com/shorts/PRp4HL6CBgw' ];
+  const output_video_name = 'song_7.mp4';
   for (let i = 0; i < videos.length; i++) {
     const video_id = videos[i];
     const base_path = '/Users/yash.bansal/workspace/YouTube.js/downloaded/song_audios';
@@ -33,7 +33,7 @@ const creds = existsSync(creds_path) ? JSON.parse(readFileSync(creds_path).toStr
       mkdirSync(base_path);
     }
 
-    const file = createWriteStream(`${base_path}/${output_video_name}`);
+    const file = createWriteStream(`${base_path}/${output_video_name}${i}.mp4`);
 
     for await (const chunk of Utils.streamToIterable(stream)) {
       file.write(chunk);
