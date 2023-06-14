@@ -1,0 +1,4 @@
+npm install ts-node --save-dev
+
+add --require ts-node/register to run config
+Copy the run configuration from other test cases
