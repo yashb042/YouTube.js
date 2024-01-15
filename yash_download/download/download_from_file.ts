@@ -13,17 +13,11 @@ const creds = existsSync(creds_path) ? JSON.parse(readFileSync(creds_path).toStr
   const yt = await Innertube.create({cache: new UniversalCache(false)});
 
   //https://youtube.com/shorts/_5Y7EnyzBRY?feature=share
-
-
-  const videos = [ 'https://www.youtube.com/shorts/Fmr8IiHC8bU',
-    'https://www.youtube.com/shorts/F8_q_zJm67U',
-    'https://www.youtube.com/shorts/SLa9hNUOxjU',
-    'https://www.youtube.com/shorts/nIXl7vQlaiA',
-    'https://www.youtube.com/shorts/n_sqCejA-uk',
-    'https://www.youtube.com/shorts/pXq9qYw5FcU' ];
-  for (let i = 0; i < videos.length; i++) {
-    const video_id = videos[i];
-    const base_path = '/Users/yash.bansal/workspace/Character_Versus_Video_Generator/test/girls';
+  const args = process.argv.slice(2);
+  const animeNames = readFileSync(args[0], 'utf-8').split('\n').map((name) => name.trim()).filter((name) => name !== '');
+  for (let i = 0; i < animeNames.length; i++) {
+    const video_id = animeNames[i];
+    const base_path = args[1];
 
     const videoId = getVideoId(video_id);
     const stream = await yt.download(videoId, {

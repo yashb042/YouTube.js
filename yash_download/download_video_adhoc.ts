@@ -7,9 +7,9 @@ import * as url from 'url';
 // @ts-ignore
 (async () => {
   const yt = await Innertube.create({cache: new UniversalCache(false)});
-  const video_id = 'https://www.youtube.com/watch?v=I8w5V-qsC_M';
-  const base_path = '/Users/yash.bansal/workspace/YouTube.js/downloaded/';
-  const output_video_name = 'video.mp4';
+  const video_id = 'https://youtube.com/shorts/kbCdPOGVD1E?si=cyP9OcRW64JZzluT';
+  const base_path = '/Users/yash.bansal/workspace/YouTube.js/downloaded/wonderful/';
+  const output_video_name = 'wonderful3.mp4';
   const [ stream ] = await Promise.all([ yt.download(getVideoId(video_id), {
     type: 'video+audio', // Audio, video or video+audio
     quality: 'bestefficiency', // Best, bestefficiency, 144p, 240p, 480p, 720p and so on.

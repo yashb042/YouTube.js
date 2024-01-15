@@ -41,8 +41,8 @@ const creds = existsSync(creds_path) ? JSON.parse(readFileSync(creds_path).toStr
 
   for (const video of videos.videos) {
     console.info('stop');
-    // console.info('Video:', video.title.toString());
-    // console.info(video.as(Video).id);
+    console.info('Video:', video.title.toString());
+    console.info(video.as(Video).id);
   }
 
   // console.info('\nPopular videos:');
