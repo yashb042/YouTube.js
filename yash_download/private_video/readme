@@ -1,6 +1,4 @@
-Network inspect on youtube studio to get the latest request
-Change pagination logic in the code
+Simply run private_video 
+Change the client creds page for different channel
 
-First run get my video list, then private video
-
-Change the client creds page also
+list_of_videos_made_private_mma not being used and updated

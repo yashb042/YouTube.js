@@ -83,6 +83,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "awesome-qr": "^2.1.5-rc.0",
     "axios": "^1.6.0",
     "jintr": "^1.0.0",
     "linkedom": "^0.14.12",

@@ -252,7 +252,7 @@ import axios from 'axios';
     // Console.log(pageToken);
     response.data.videos.forEach((video: { metrics: { viewCount: string; }; videoId: any; }) => {
       const viewCount = parseInt(video.metrics.viewCount);
-      if (viewCount < 500) {
+      if (viewCount < 800) {
         console.log(`${video.videoId}`);
       }
     });

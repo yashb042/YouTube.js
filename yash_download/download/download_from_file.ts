@@ -18,8 +18,14 @@ const creds = existsSync(creds_path) ? JSON.parse(readFileSync(creds_path).toStr
   for (let i = 0; i < animeNames.length; i++) {
     const video_id = animeNames[i];
     const base_path = args[1];
+    let videoId;
+    if (args[2] == 'Link') {
+      videoId = getVideoId(video_id);
+    } else {
+      videoId = video_id;
+    }
 
-    const videoId = getVideoId(video_id);
+    // Const videoId = getVideoId(video_id);
     const stream = await yt.download(videoId, {
       type: 'video+audio', // Audio, video or video+audio
       quality: 'bestefficiency', // Best, bestefficiency, 144p, 240p, 480p, 720p and so on.
@@ -38,6 +44,7 @@ const creds = existsSync(creds_path) ? JSON.parse(readFileSync(creds_path).toStr
     if (basicInfo.basic_info && basicInfo.basic_info.title) {
       video_name = basicInfo.basic_info.title.toString();
       console.info('Video name:', video_name);
+      video_name = video_name.replace('/', '_');
     }
 
     // Video_name = video_name.split('#')[0];
@@ -51,6 +58,8 @@ const creds = existsSync(creds_path) ? JSON.parse(readFileSync(creds_path).toStr
       console.error(e);
     }
 
+    //Sleep for 5 seconds
+    await new Promise((resolve) => setTimeout(resolve, 5000));
   }
 })();
 
